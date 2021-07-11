@@ -7,8 +7,8 @@ public class Main {
 		
 		immutableString s1 = new immutableString("abcd");
 		immutableString s2 = new immutableString("bcda");
-		immutableString s3 = new immutableString("cdab");
-		immutableString s4 = new immutableString("random");
+		immutableString s3 = new immutableString("cda");
+		immutableString s4 = new immutableString("rand");
 		
 		boolean comp1 = s1.compareImmutableStrings(s1, s2);
 		boolean comp2 = s2.compareImmutableStrings(s1, s3);

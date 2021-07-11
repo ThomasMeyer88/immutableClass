@@ -1,5 +1,8 @@
 package immutableClass;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public final class immutableString {
 	private String string;
 
@@ -11,13 +14,32 @@ public final class immutableString {
 	}
 	
 	public boolean compareImmutableStrings(immutableString s1, immutableString s2) {
-		String string1 = s1.getString();
-		String string2 = s2.getString();
+		String string1 = s1.getString().toLowerCase();
+		String string2 = s2.getString().toLowerCase();
 		if (string1.length() == string2.length()) {
-			return true;
+			char[] char1 = string1.toCharArray();
+			char[] char2 = string2.toCharArray();
+			
+			Arrays.sort(char1);
+			Arrays.sort(char2);
+			
+			int i = 0;
+			boolean test = false;
+			for (char a : char1) {		
+				if (a == char2[i]) {					
+					test = true;
+				} else {
+					test = false;
+					break;
+				}
+				i++;
+			}
+			return test;
 		} else {
 			return false;
 		}
 	}
+	
+	
  
 }
